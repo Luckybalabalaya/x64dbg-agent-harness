@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd C:/Users/Administrator/x64dbg && git remote add harness https://github.com/Luckybalabalaya/x64dbg-agent-harness.git && git push harness development:main\",\"description\":\"Add new remote a...",
+  "error": "Exit code 1\nremote: fatal: did not receive expected object a7b8a02336f4aed8b04593130e01fcec4880e7da        \nerror: remote unpack failed: index-pack failed\nTo https://github.com/Luckybalabalaya/x64dbg-agent-harness.git\n ! [remote rejected] development -> main (failed)\nerror: failed to push some refs to 'https://github.com/Luckybalabalaya/x64dbg-agent-harness.git'",
+  "timestamp": "2026-03-25T17:17:10.731Z",
+  "retry_count": 1
+}

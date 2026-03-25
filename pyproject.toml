@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cli-anything-x64dbg"
+version = "1.0.0"
+description = "CLI harness for x64dbg debugger"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "click>=8.0.0",
+  "prompt-toolkit>=3.0.0",
+  "requests>=2.28.0",
+]
+
+[project.scripts]
+cli-anything-x64dbg = "cli_anything.x64dbg.x64dbg_cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["cli_anything.*"]
+
+[tool.setuptools.package-data]
+"cli_anything.x64dbg" = ["README.md", "skills/*.md", "tests/*.md", "tests/*.py"]

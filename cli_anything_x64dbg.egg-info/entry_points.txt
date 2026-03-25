@@ -1,0 +1,2 @@
+[console_scripts]
+cli-anything-x64dbg = cli_anything.x64dbg.x64dbg_cli:main
