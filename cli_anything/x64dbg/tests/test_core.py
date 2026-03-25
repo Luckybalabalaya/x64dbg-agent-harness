@@ -1295,6 +1295,44 @@ def test_cli_misc_flushlog_builds_native_command(monkeypatch, tmp_path: Path) ->
     }
 
 
+def test_cli_misc_config_read_builds_native_command(monkeypatch, tmp_path: Path) -> None:
+    captured: dict[str, str] = {}
+
+    def fake_run(ctx, action, command, target=None):
+        captured["action"] = action
+        captured["command"] = command
+
+    monkeypatch.setattr(cli_module, "_run_single", fake_run)
+    result = CliRunner().invoke(
+        main,
+        ["--state-file", str(tmp_path / "state.json"), "misc", "config", "Events", "TlsCallbacks"],
+    )
+    assert result.exit_code == 0
+    assert captured == {
+        "action": "misc.config",
+        "command": "config Events,TlsCallbacks",
+    }
+
+
+def test_cli_misc_config_write_builds_native_command(monkeypatch, tmp_path: Path) -> None:
+    captured: dict[str, str] = {}
+
+    def fake_run(ctx, action, command, target=None):
+        captured["action"] = action
+        captured["command"] = command
+
+    monkeypatch.setattr(cli_module, "_run_single", fake_run)
+    result = CliRunner().invoke(
+        main,
+        ["--state-file", str(tmp_path / "state.json"), "misc", "config", "Events", "TlsCallbacks", "1"],
+    )
+    assert result.exit_code == 0
+    assert captured == {
+        "action": "misc.config",
+        "command": "config Events,TlsCallbacks,1",
+    }
+
+
 def test_cli_math_inc_builds_native_command(monkeypatch, tmp_path: Path) -> None:
     captured: dict[str, str] = {}
 

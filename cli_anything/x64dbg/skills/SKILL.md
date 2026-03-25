@@ -271,6 +271,7 @@ Miscellaneous utility commands.
 
 - `meminfo`: query memory information (mode, address, optional size)
 - `flushlog`: flush the log buffer
+- `config`: read or write debugger configuration settings (e.g., `misc config Events TlsCallbacks 1` to enable TLS callback breakpoints)
 
 ### `math`
 

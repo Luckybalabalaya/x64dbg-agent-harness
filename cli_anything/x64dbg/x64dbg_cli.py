@@ -1720,6 +1720,29 @@ def misc_flushlog(ctx: click.Context) -> None:
     _run_single(ctx, "misc.flushlog", "flushlog")
 
 
+@misc.command("config")
+@click.argument("section")
+@click.argument("key")
+@click.argument("value", required=False, default=None)
+@click.pass_context
+def misc_config(ctx: click.Context, section: str, key: str, value: str | None) -> None:
+    """Read or write debugger configuration settings.
+
+    SECTION is the configuration section (e.g., "Events").
+    KEY is the setting name (e.g., "TlsCallbacks").
+    VALUE is optional; if omitted, reads the setting; if provided, writes it.
+
+    Examples:
+      config Events TlsCallbacks        # Read TLS callback setting
+      config Events TlsCallbacks 1      # Enable TLS callback breakpoints
+      config Events SystemBreakpoint 1  # Enable system breakpoint
+    """
+    if value is None:
+        _run_single(ctx, "misc.config", f"config {section},{key}")
+    else:
+        _run_single(ctx, "misc.config", f"config {section},{key},{value}")
+
+
 @main.group()
 def math() -> None:
     """Arithmetic and bitwise operations for register/variable manipulation."""
