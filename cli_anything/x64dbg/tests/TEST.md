@@ -2,7 +2,7 @@
 
 ## Part 1: Test Inventory Plan
 
-- `test_core.py`: 98 unit tests planned
+- `test_core.py`: 100 unit tests planned
 - `test_full_e2e.py`: 6 E2E tests planned
 
 ## Unit Test Plan
@@ -139,17 +139,17 @@
 ### `pytest cli_anything/x64dbg/tests -q`
 
 ```text
-........................................................................ [ 69%]
-................................                                         [100%]
-104 passed in 7.22s
+........................................................................ [ 67%]
+..................................                                       [100%]
+106 passed in 7.21s
 ```
 
 ### `pytest cli_anything/x64dbg/tests/test_core.py -q`
 
 ```text
-........................................................................ [ 69%]
-..............................                                            [100%]
-98 passed in 0.11s
+........................................................................ [ 67%]
+..................................                                       [100%]
+100 passed in 0.11s
 ```
 
 ### `pytest cli_anything/x64dbg/tests/test_full_e2e.py -q`
@@ -183,10 +183,10 @@ database=C:\Users\Administrator\x64dbg\bin\x64\headless\db\CrackMe_packed.exe.dd
 
 ## Summary Statistics
 
-- Total tests: 104
-- Passed: 104
+- Total tests: 106
+- Passed: 106
 - Pass rate: 100%
-- Full suite time: 7.22s
+- Full suite time: 7.21s
 - Core suite time: 0.11s
 - E2E suite time: 7.10s
 
